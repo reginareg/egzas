@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('menius', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            $table->unsignedBigInteger('dish_id')->nullable();
+            $table->foreign('dish_id')->references('id')->on('dishes');
             $table->timestamps();
         });
     }

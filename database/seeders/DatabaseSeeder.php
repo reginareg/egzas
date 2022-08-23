@@ -37,15 +37,17 @@ class DatabaseSeeder extends Seeder
             DB::table('restaurants')->insert([
                 'name' => $faker->company(),
                 'address' => $faker->streetAddress(),
-                'code' => $faker->md5()
+                'code' => $faker->randomFloat(),
             ]);
         }
 
        $meniu = ['Breakfast', 'Lunch', 'Dinner'];
+       foreach (range(1, 3) as $key => $_) {
             DB::table('meniu')->insert([
                 'name' => $meniu[$key],
              
             ]);
+        }
         
 
 
@@ -54,7 +56,7 @@ class DatabaseSeeder extends Seeder
             DB::table('dishes')->insert([
                 'name' => $dishes[$key],
                 'about' => $faker->text($maxNbChars = 200),
-                // 'photo'=> $faker->imageUrl($width = 640, $height = 480)
+                'photo'=> $faker->imageUrl($width = 640, $height = 480)
             ]);
         }
     }

@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('code', 10);
+            $table->decimal('code', 65);
             $table->string('address', 50);
-            $table->unsignedBigInteger('dish_id');
+            $table->unsignedBigInteger('dish_id')->nullable();
             $table->foreign('dish_id')->references('id')->on('dishes');
-            $table->unsignedBigInteger('meniu_id');
+            $table->unsignedBigInteger('meniu_id')->nullable();
             $table->foreign('meniu_id')->references('id')->on('menius');
             $table->timestamps();
         });
