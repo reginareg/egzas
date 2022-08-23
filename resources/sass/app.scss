@@ -6,3 +6,40 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.r-txt{
+    font-size: 21px;
+    color: cadetblue;
+    font-weight: bold;
+}
+.bd{
+    border: none;
+    background: none;
+    color: #fff;
+}
+.e-img{
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px #000;
+}
+.check-color{
+    color: black;
+
+}
+.bg-logo{
+    // background-origin: border-box;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 100%;
+    background: url('http://localhost/rs/rest/public/images/ph.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 40rem !important;
+    
+    
+}
+.opacity{
+     opacity: 0.9;
+}
