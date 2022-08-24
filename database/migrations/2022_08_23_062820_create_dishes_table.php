@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('about');
             $table->string('photo')->nullable();
+            $table->unsignedBigInteger('meniu_id')->default(1);
+            $table->foreign('meniu_id')->references('id')->on('menius');
             $table->timestamps();
         });
     }

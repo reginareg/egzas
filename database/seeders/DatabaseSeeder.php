@@ -43,8 +43,9 @@ class DatabaseSeeder extends Seeder
 
        $meniu = ['Breakfast', 'Lunch', 'Dinner'];
        foreach (range(1, 3) as $key => $_) {
-            DB::table('meniu')->insert([
+            DB::table('menius')->insert([
                 'name' => $meniu[$key],
+                'restaurant_id' => rand (1, 11),
              
             ]);
         }

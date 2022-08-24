@@ -22,10 +22,10 @@
                                             <h2>{{$restaurant->name}}</h2>
                                         </div>
                                         <div class="controls">
-                                            <a class="btn btn-outline-primary m-2" href="{{route('r.show', $restaurant->id)}}">Show</a>
+                                            {{-- <a class="btn btn-outline-primary m-2" href="{{route('r.show', $restaurant->id)}}">Show</a> --}}
 
                                             <a class="btn btn-outline-success m-2" href="{{route('r.edit', $restaurant)}}">Edit</a>
-                                            <form class="delete" action="{{route('r.delete', $restaurant)}}" method="post">
+                                            <form class="delete" action="{{route('r.delete', $restaurant->id)}}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-outline-danger m-2">Delete</button>

@@ -71,14 +71,10 @@ class DishController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function edit(D $dish)
+    public function edit(int $dishId)
     {
-        return view('dish.edit', [
-            'dish' => $dish,
-            'meniu' => M::all(),
-            'restaurant' => R::all(),
-
-        ]);
+        $dish = D::where('id', $dishId)->first();
+        return view('dish.edit', ['dish'=>$dish]);
     }
 
     /**

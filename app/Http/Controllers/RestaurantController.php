@@ -72,15 +72,11 @@ class RestaurantController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function edit(R $restaurant)
+    public function edit(int $restaurantId)
     {
     
-        return view('restaurant.edit', [
-            'restaurant' => $restaurant,
-            'meniu' => M::all(),
-            'dishes' => D::all(),
-
-        ]);
+        $restaurant = R::where('id', $restaurantId)->first();
+        return view('restaurant.edit', ['restaurant'=>$restaurant]);
     }
 
     /**
@@ -108,7 +104,11 @@ class RestaurantController extends Controller
      */
     public function destroy(R $restaurant)
     {
-        $restaurant->delete();
-        return redirect()->route('r.index')->with('deleted', 'Bye bye, I kill you!');
+        // if($restaurant ->restaurant_group->count())
+        // {
+        //     return redirect()->route('restaurant-index')->with('deleted', 'This Restaurant has linked Menus - deletion is not allowed');
+        // }
+        $restaurant -> delete();
+        return redirect()->back()->with('success', 'Restaurant is deleted ');
     }
-}
+    }

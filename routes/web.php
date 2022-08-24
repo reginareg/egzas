@@ -40,7 +40,7 @@ Route::get('/dishes/edit/{dishId}', [D::class, 'edit'])->name('d.edit')->middlew
 Route::put('/dishes/update/{dish}', [D::class, 'update'])->name('d.update')->middleware('role:admin');
 Route::get('/dishes/create', [D::class, 'create'])->name('d.create')->middleware('role:admin');
 Route::post('/dishes/store', [D::class, 'store'])->name('d.store')->middleware('role:admin');
-Route::delete('/dishes/delete/{dish}', [D::class, 'destroy'])->name('d.detele')->middleware('role:admin');
+Route::delete('/dishes/delete/{dish}', [D::class, 'destroy'])->name('d.delete')->middleware('role:admin');
 Route::put('/dishes/photo/delete/{dish}', [D::class, 'del'])->name('d_p')->middleware('role:admin');
 
 
